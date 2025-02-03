@@ -1,22 +1,23 @@
 'use client';
 
 import Link from 'next/link';
+import Header from '@/components/ui/Header';
 
 export default function Home() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-semibold text-gray-900">Dashboard Overview</h1>
+        <Header variant="h1" className="text-gray-900">Dashboard Overview</Header>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white rounded-lg border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-900 mb-2">Total Users</h2>
-          <p className="text-3xl font-semibold text-gray-700">0</p>
+          <p className="text-3xl font-semibold text-gray-700 font-mono">0</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-900 mb-2">Active Sessions</h2>
-          <p className="text-3xl font-semibold text-gray-700">0</p>
+          <p className="text-3xl font-semibold text-gray-700 font-mono">0</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-900 mb-2">System Status</h2>

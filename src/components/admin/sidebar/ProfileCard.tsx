@@ -14,7 +14,7 @@ export default function ProfileCard({ isCollapsed }: ProfileCardProps) {
         <div className={`flex items-center ${isCollapsed ? 'w-full justify-center' : 'flex-grow'}`}>
           <div className="h-8 w-8 rounded-full bg-gray-300 flex-shrink-0 group-hover:ring-2 ring-gray-400 transition-all"></div>
           {!isCollapsed && (
-            <div className="ml-3 text-gray-900 font-medium truncate max-w-[120px]">
+            <div className="ml-3 text-gray-900 truncate max-w-[120px]">
               Name Nameson
             </div>
           )}

@@ -1,10 +1,8 @@
 import { Toaster } from 'react-hot-toast';
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { GeistSans } from 'geist/font';
 import { ReactNode } from 'react';
 import Sidebar from '../components/admin/Sidebar';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Modern Next.js Supabase Starter',
@@ -13,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={GeistSans.className}>
       <body>
         <div className="flex h-screen">
           <Sidebar />
