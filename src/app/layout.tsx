@@ -2,7 +2,7 @@ import { Toaster } from 'react-hot-toast';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
-import Sidebar from '@/components/admin/Sidebar';
+import Sidebar from '../components/admin/Sidebar';
 
 const inter = Inter({ subsets: ['latin'] });
 
