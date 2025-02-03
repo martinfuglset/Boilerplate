@@ -1,62 +1,44 @@
+'use client';
+
 import Link from 'next/link';
-import Button from '@/components/ui/Button';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl lg:static lg:w-auto lg:rounded-xl lg:bg-gray-200 lg:p-4">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl font-semibold text-gray-900">Dashboard Overview</h1>
       </div>
 
-      <div className="relative flex place-items-center my-16">
-        <h1 className="text-5xl font-bold text-center">
-          Next.js + Supabase
-          <span className="block text-gray-600 mt-2">Starter Template</span>
-        </h1>
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left gap-8">
-        <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100">
-          <h2 className="mb-3 text-2xl font-semibold">
-            Authentication{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              →
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">Built-in authentication with Supabase Auth.</p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <h2 className="text-lg font-medium text-gray-900 mb-2">Total Users</h2>
+          <p className="text-3xl font-semibold text-gray-700">0</p>
         </div>
-
-        <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100">
-          <h2 className="mb-3 text-2xl font-semibold">
-            Database{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              →
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">Powerful PostgreSQL database with Supabase.</p>
+        <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <h2 className="text-lg font-medium text-gray-900 mb-2">Active Sessions</h2>
+          <p className="text-3xl font-semibold text-gray-700">0</p>
         </div>
-
-        <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100">
-          <h2 className="mb-3 text-2xl font-semibold">
-            TypeScript{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              →
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">Type-safe development with TypeScript.</p>
+        <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <h2 className="text-lg font-medium text-gray-900 mb-2">System Status</h2>
+          <p className="text-sm text-green-600">All systems operational</p>
         </div>
       </div>
 
-      <div className="mt-8">
-        <Link href="/admin">
-          <Button variant="outline" size="lg">
-            Access Admin Dashboard →
-          </Button>
-        </Link>
+      <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <h2 className="text-lg font-medium text-gray-900 mb-4">Quick Actions</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Link href="/auth">
+            <button className="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+              Manage Users
+            </button>
+          </Link>
+          <Link href="/database">
+            <button className="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+              View Database
+            </button>
+          </Link>
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
