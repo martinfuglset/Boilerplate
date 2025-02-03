@@ -1,6 +1,9 @@
 import { HTMLAttributes, forwardRef } from 'react';
-import { HeaderVariant, FontWeight } from '../../types/ui';
+import { HeaderVariant } from '../../types/ui';
 import { defaultTheme, createStyleVariants } from '../../utils/theme';
+
+type FontWeight = 'normal' | 'medium' | 'semibold' | 'bold';
+type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4';
 
 interface HeaderProps extends HTMLAttributes<HTMLHeadingElement> {
   variant?: HeaderVariant;
@@ -8,7 +11,7 @@ interface HeaderProps extends HTMLAttributes<HTMLHeadingElement> {
 }
 
 const Header = forwardRef<HTMLHeadingElement, HeaderProps>((
-  { className = '', variant = 'h1', weight = 'bold', children, ...props },
+  { className = '', variant = 'h1', weight = 'normal', children, ...props },
   ref
 ) => {
   const baseStyles = `text-theme(colors.text)`;
@@ -25,18 +28,18 @@ const Header = forwardRef<HTMLHeadingElement, HeaderProps>((
     medium: 'font-medium',
     semibold: 'font-semibold',
     bold: 'font-bold'
-  };
+  } as const;
 
-  const Component = variant;
+  const Tag = variant as HeadingElement;
 
   return (
-    <Component
-      className={`${baseStyles} ${variants[variant]} ${weights[weight]} ${className}`}
+    <Tag
+      className={`${baseStyles} ${variants[variant]} ${weights[weight as keyof typeof weights]} ${className}`}
       ref={ref}
       {...props}
     >
       {children}
-    </Component>
+    </Tag>
   );
 });
 
