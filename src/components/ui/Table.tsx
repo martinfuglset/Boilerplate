@@ -1,8 +1,10 @@
 import { HTMLAttributes, forwardRef } from 'react';
+import { TableVariant, Size } from '../../types/ui';
+import { defaultTheme, createStyleVariants } from '../../utils/theme';
 
 interface TableProps extends HTMLAttributes<HTMLTableElement> {
-  variant?: 'default' | 'striped';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: TableVariant;
+  size?: Size;
 }
 
 const Table = forwardRef<HTMLTableElement, TableProps>((
@@ -11,10 +13,10 @@ const Table = forwardRef<HTMLTableElement, TableProps>((
 ) => {
   const baseStyles = 'w-full border-collapse text-left';
   
-  const variants = {
-    default: 'border border-gray-200',
-    striped: 'border border-gray-200 [&_tr:nth-child(even)]:bg-gray-50'
-  };
+  const variants = createStyleVariants({
+    default: `border border-theme(colors.border)`,
+    striped: `border border-theme(colors.border) [&_tr:nth-child(even)]:bg-theme(colors.border)`
+  }, defaultTheme);
 
   const sizes = {
     sm: '[&_th]:px-3 [&_th]:py-2 [&_td]:px-3 [&_td]:py-2 text-sm',
@@ -37,32 +39,30 @@ Table.displayName = 'Table';
 
 export default Table;
 
-export const Thead = forwardRef<HTMLTableSectionElement, HTMLAttributes<HTMLTableSectionElement>>((
-  { className = '', children, ...props },
-  ref
-) => (
-  <thead
-    className={`bg-gray-50 text-gray-700 font-medium border-b border-gray-200 ${className}`}
-    ref={ref}
-    {...props}
-  >
-    {children}
-  </thead>
-));
+export const Thead = forwardRef<HTMLTableSectionElement, HTMLAttributes<HTMLTableSectionElement>>(
+  ({ className = '', children, ...props }, ref) => (
+    <thead
+      className={`bg-theme(colors.border) text-theme(colors.text) font-medium border-b border-theme(colors.border) ${className}`}
+      ref={ref}
+      {...props}
+    >
+      {children}
+    </thead>
+  )
+);
 
 Thead.displayName = 'Thead';
 
-export const Tbody = forwardRef<HTMLTableSectionElement, HTMLAttributes<HTMLTableSectionElement>>((
-  { className = '', children, ...props },
-  ref
-) => (
-  <tbody
-    className={`text-gray-900 divide-y divide-gray-200 ${className}`}
-    ref={ref}
-    {...props}
-  >
-    {children}
-  </tbody>
-));
+export const Tbody = forwardRef<HTMLTableSectionElement, HTMLAttributes<HTMLTableSectionElement>>(
+  ({ className = '', children, ...props }, ref) => (
+    <tbody
+      className={`text-theme(colors.text) divide-y divide-theme(colors.border) ${className}`}
+      ref={ref}
+      {...props}
+    >
+      {children}
+    </tbody>
+  )
+);
 
 Tbody.displayName = 'Tbody';

@@ -1,11 +1,13 @@
 'use client';
 
 import { ReactNode, useState } from 'react';
+import { TooltipPosition } from '../../types/ui';
+import { defaultTheme, createStyleVariants } from '../../utils/theme';
 
 interface TooltipProps {
   children: ReactNode;
   content: string;
-  position?: 'top' | 'right' | 'bottom' | 'left';
+  position?: TooltipPosition;
 }
 
 export default function Tooltip({ children, content, position = 'top' }: TooltipProps) {
@@ -18,6 +20,10 @@ export default function Tooltip({ children, content, position = 'top' }: Tooltip
     left: 'right-full top-1/2 -translate-y-1/2 mr-2'
   };
 
+  const tooltipStyles = createStyleVariants({
+    base: `px-2 py-1 text-sm text-theme(colors.background) bg-theme(colors.primary) rounded pointer-events-none whitespace-nowrap`
+  }, defaultTheme);
+
   return (
     <div
       className="relative inline-block"
@@ -26,7 +32,7 @@ export default function Tooltip({ children, content, position = 'top' }: Tooltip
     >
       {isVisible && (
         <div
-          className={`absolute ${positions[position]} z-10 px-2 py-1 text-sm text-white bg-gray-900 rounded pointer-events-none whitespace-nowrap`}
+          className={`absolute ${positions[position]} z-10 ${tooltipStyles.base}`}
         >
           {content}
         </div>
