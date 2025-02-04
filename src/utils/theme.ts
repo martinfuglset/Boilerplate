@@ -2,7 +2,7 @@ import { ThemeConfig } from '../types/ui';
 
 export const defaultTheme: ThemeConfig = {
   colors: {
-    primary: '#1a1a1a',
+    primary: '#005187',
     secondary: '#4a5568',
     accent: '#3182ce',
     background: '#ffffff',
