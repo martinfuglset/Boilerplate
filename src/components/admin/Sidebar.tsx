@@ -9,7 +9,7 @@ export default function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <div className={`${isCollapsed ? 'w-20' : 'w-64'} bg-gray-100 p-4 space-y-6 transition-all duration-300 flex flex-col h-full relative overflow-hidden`}>
+    <div className={`${isCollapsed ? 'w-20' : 'w-64'} bg-gray-100 p-4 space-y-6 transition-all duration-300 flex flex-col h-full relative overflow-hidden border-r border-gray-200`}>
       <ProfileCard isCollapsed={isCollapsed} />
       <NavigationMenu isCollapsed={isCollapsed} />
       <SidebarToggle 

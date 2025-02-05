@@ -14,7 +14,7 @@ export default function AdminPage() {
           {/* Admin Content */}
           <div>
             <Header variant="h2" className="mb-4">Administrasjon</Header>
-            <p className="text-gray-600">Ingen administrative oppgaver</p>
+            <p className="text-secondary">Ingen administrative oppgaver</p>
           </div>
         </div>
       </div>

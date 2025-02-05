@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, forwardRef } from 'react';
-import { ButtonVariant, Size } from '../../types/ui';
-import { defaultTheme, createStyleVariants } from '../../utils/theme';
+import { ButtonVariant, Size, theme, createStyleVariants } from '@/config/theme.config';
+
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
@@ -17,7 +17,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((
     primary: `bg-theme(colors.primary) text-theme(colors.background) hover:opacity-90`,
     secondary: `bg-theme(colors.secondary) text-theme(colors.background) hover:opacity-90`,
     outline: `border border-theme(colors.border) bg-transparent hover:bg-theme(colors.border)`
-  }, defaultTheme);
+  }, theme);
 
   const sizes = {
     sm: 'h-8 px-3 text-sm',

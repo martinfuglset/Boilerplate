@@ -18,14 +18,14 @@ export default function ProfilePage() {
               <div className="flex items-center space-x-4">
                 <div className="h-20 w-20 rounded-full bg-gray-200"></div>
                 <div>
-                  <h2 className="text-xl text-[#005187]">User Name</h2>
-                  <p className="text-sm text-[#005187]">user@example.com</p>
+                  <h2 className="text-xl text-text">User Name</h2>
+                  <p className="text-sm text-secondary">user@example.com</p>
                 </div>
               </div>
 
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm text-[#005187]">Name</label>
+                  <label className="block text-sm text-text">Name</label>
                   <input
                     type="text"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
@@ -34,7 +34,7 @@ export default function ProfilePage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm text-[#005187]">Email</label>
+                  <label className="block text-sm text-text">Email</label>
                   <input
                     type="email"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
@@ -59,8 +59,8 @@ export default function ProfilePage() {
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <label className="text-sm text-[#005187]">Email Notifications</label>
-                  <p className="text-sm text-[#005187]">Receive email updates about your account</p>
+                  <label className="text-sm text-text">Email Notifications</label>
+                  <p className="text-sm text-secondary">Receive email updates about your account</p>
                 </div>
                 <button
                   className="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 bg-gray-200"
@@ -73,8 +73,8 @@ export default function ProfilePage() {
 
               <div className="flex items-center justify-between">
                 <div>
-                  <label className="text-sm text-[#005187]">Dark Mode</label>
-                  <p className="text-sm text-[#005187]">Use dark theme across the application</p>
+                  <label className="text-sm text-text">Dark Mode</label>
+                  <p className="text-sm text-secondary">Use dark theme across the application</p>
                 </div>
                 <button
                   className="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 bg-gray-200"

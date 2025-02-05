@@ -1,6 +1,5 @@
 import { HTMLAttributes, forwardRef } from 'react';
-import { HeaderVariant, FontWeight } from '../../types/ui';
-import { typography } from '../../config/theme.config';
+import { HeaderVariant, FontWeight, theme } from '../../config/theme.config';
 
 type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4';
 
@@ -14,14 +13,14 @@ const Header = forwardRef<HTMLHeadingElement, HeaderProps>((
   ref
 ) => {
   const baseStyles = 'text-primary';
-  const variants = typography.sizes;
-  const weights = typography.fontWeights;
+  const variants = theme.typography.sizes;
+  const weights = theme.typography.fontWeights;
 
   const Tag = variant as HeadingElement;
 
   return (
     <Tag
-      className={`${baseStyles} ${variants[variant]} ${weights[weight as keyof typeof weights]} ${className}`}
+      className={`${baseStyles} ${variants[variant]} ${weights[weight]} ${className}`}
       ref={ref}
       {...props}
     >

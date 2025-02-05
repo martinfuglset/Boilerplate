@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['Inter', 'monospace'],
+        mono: ['Inter', 'system-ui', 'sans-serif'],
       },
       letterSpacing: {
         tighter: '-0.05em',
@@ -17,7 +17,12 @@ module.exports = {
         normal: '0',
       },
       colors: {
-        primary: '#005187',
+        primary: 'rgb(var(--color-primary))',
+        secondary: 'rgb(var(--color-secondary))',
+        accent: 'rgb(var(--color-accent))',
+        background: 'rgb(var(--color-background))',
+        text: 'rgb(var(--color-primary))',
+        border: 'rgb(var(--color-border))',
         gray: {
           50: '#f9fafb',
           100: '#f3f4f6',
@@ -54,6 +59,16 @@ module.exports = {
           800: '#991b1b',
           900: '#7f1d1d',
         },
+      },
+      spacing: {
+        sm: 'var(--space-sm)',
+        md: 'var(--space-md)',
+        lg: 'var(--space-lg)',
+      },
+      borderRadius: {
+        sm: 'var(--radius-sm)',
+        md: 'var(--radius-md)',
+        lg: 'var(--radius-lg)',
       },
     },
   },
